@@ -58,8 +58,16 @@ canvas.addEventListener(EVENTNAME_TOUCHEND,function(){
             lineWidth:20
         }
     });
-    World.add(engine.world,[box])
+    World.add(engine.world,[box]);
+    tone();
 });
+
+function tone(){
+
+    var synth = new Tone.Synth().toMaster();
+    synth.triggerAttackRelease('A3', '10n');
+
+}
 
 
 
