@@ -1,5 +1,3 @@
-//(function() {
-
 var Engine = Matter.Engine;
 var World = Matter.World;
 var Bodies = Matter.Bodies;
@@ -50,7 +48,10 @@ World.add(engine.world, [boxA,boxB, ground,mouseConstraint]);
 Engine.run(engine);
 Render.run(render);
 
-canvas.addEventListener('click',function(){
+var supportTouch = 'ontouchend' in document;
+var EVENTNAME_TOUCHEND = supportTouch ? 'touchend' : 'mouseup';
+
+canvas.addEventListener(EVENTNAME_TOUCHEND,function(){
     var box = Bodies.rectangle(200, 0, 20, 20,{
         render:{
             fillstroke:'red',
@@ -60,7 +61,7 @@ canvas.addEventListener('click',function(){
     World.add(engine.world,[box])
 });
 
-//})();
+
 
 
 
