@@ -32,14 +32,14 @@ var boxA = Bodies.rectangle(450,300,80,80,{
     restitution: 0.01,
     frictionAir: 0.1,
     render:{
-        fillstroke:'white',
+        fillstroke:'black',
         strokeStyle: 'blue',
         lineWidth: 30
     }
 });
     
 
-var boxB = Bodies.rectangle(450, 50, 80, 80,{
+var boxB = Bodies.rectangle(((window.innerWidth)/2), 0 , 30, 30,{
 });
 
 var groundWidth = window.innerWidth;
@@ -72,7 +72,7 @@ var supportTouch = 'ontouchend' in document;
 var EVENTNAME_TOUCHEND = supportTouch ? 'touchend' : 'mouseup';
 
 canvas.addEventListener(EVENTNAME_TOUCHEND,function(){
-    var box = Bodies.rectangle(200, 0, 50, 50,{
+    var box = Bodies.rectangle(((window.innerWidth)/2), 0, 20, 20,{
         render:{
             fillstroke:'red',
             lineWidth:20
