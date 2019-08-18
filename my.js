@@ -71,6 +71,10 @@ Render.run(render);
 var supportTouch = 'ontouchend' in document;
 var EVENTNAME_TOUCHEND = supportTouch ? 'touchend' : 'mouseup';
 
+var score = document.getElementById('score');
+var point = 100;
+
+var message = document.getElementById('message');
 canvas.addEventListener(EVENTNAME_TOUCHEND,function(){
     var box = Bodies.rectangle(((window.innerWidth)/2), 0, 20, 20,{
         render:{
@@ -78,6 +82,12 @@ canvas.addEventListener(EVENTNAME_TOUCHEND,function(){
             lineWidth:20
         }
     });
+point--;
+    score.innerText = "残り：" + point;
+
+    if(point <= 0) {
+    message.innerText = "やったね!!"
+    }
     World.add(engine.world,[box]);
     clickSound();
     start = new Date();
