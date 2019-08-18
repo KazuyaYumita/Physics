@@ -42,8 +42,11 @@ var boxA = Bodies.rectangle(450,300,80,80,{
 var boxB = Bodies.rectangle(450, 50, 80, 80,{
 });
 
+var groundWidth = window.innerWidth;
+var groundY = (window.innerHeight) / 2;
+
 // isStatic:静的(完全固定)
-var ground = Bodies.rectangle(40, 300, 600, 60, { isStatic: true });
+var ground = Bodies.rectangle(40, groundY, groundWidth, 60, { isStatic: true });
 
 var start = new Date();
 var end = new Date();
@@ -69,7 +72,7 @@ var supportTouch = 'ontouchend' in document;
 var EVENTNAME_TOUCHEND = supportTouch ? 'touchend' : 'mouseup';
 
 canvas.addEventListener(EVENTNAME_TOUCHEND,function(){
-    var box = Bodies.rectangle(200, 0, 20, 20,{
+    var box = Bodies.rectangle(200, 0, 50, 50,{
         render:{
             fillstroke:'red',
             lineWidth:20
