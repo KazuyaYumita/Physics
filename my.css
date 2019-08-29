@@ -13,7 +13,11 @@ p{
 
 body{
     width:100%;
-    overflow: auto;
+}
+
+#container{
+    height:100%;
+    overflow:100%;
 }
 
 #canvas{
