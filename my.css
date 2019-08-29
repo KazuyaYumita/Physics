@@ -1,4 +1,8 @@
 
 body{
-    width:95vw;
+    width:100%;
+}
+
+#canvas{
+    width:90%;
 }
